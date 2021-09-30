@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Side_bar_menu</title>
+    <script src="https://kit.fontawesome.com/86d1139cb7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Tangerine|Inconsolata|Droid+Sans">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            list-style: none;
+        }
+      body {
+        font-family: 'Tangerine', serif;
+      }
+      .sidebar{
+          position: fixed;
+          left: -250px;
+          width: 250px;
+          height: 100%;
+          background: #042331;
+          transition: all .5s ease;
+      }
+      .sidebar header{
+          font-size: 15px;
+          color: antiquewhite;
+          text-align: center;
+          line-height: 70px;
+          background: #063142;
+          user-select: none;
+          box-sizing: border-box;
+          border-radius: 10px ; 
+      }
+      .sidebar header:hover{
+        font-size: 18px;
+        transition: .8s;
+      }
+      .sidebar ul a{
+          font-size: 30px;
+          display: block;
+          height: 100%;
+          width: 100%;
+          color: aquamarine;
+          line-height: 70px;
+          padding-left: 40px;
+          box-sizing: border-box;
+          border-top: 1px solid rgba(255, 255,255, 255);
+          border-radius: 10px ;
+          border-bottom: 1px solid black;
+          box-shadow: salmon;
+      }
+      .sidebar ul a:hover {
+        padding-left: 50px;
+        transition: .5s;
+      }
+      .sidebar ul a i{
+          padding-right: 10px;
+      }
+      .sidebar ul a i:hover{
+          color: rgb(131, 2, 170);
+          transition: .4s;
+      }
+      #check{
+          display: none;
+      }
+      label #btn,label #cancel{
+            position:absolute;
+            cursor: pointer;
+            background: #042331;
+            border-radius: 3px;
+      }
+      label #btn{
+          left: 40px;
+          top:25px;
+          font-size: 35px;
+          color: white;
+          padding: 6px 12px;
+          transition: all .5s ease;
+
+      }
+      label #cancel{
+          z-index: 1111;
+          left: -195px;
+          top: 17px;
+          font-size: 30px;
+          color: #0a5275;
+          padding: 4px 9px;
+          transition: all .5s ease;
+      }
+      #check:checked~.sidebar{
+          left: 0;
+          transition: all .5s ease;
+      }
+      #check:checked~label #btn{
+          left: 250px;
+          opacity: 0;
+          pointer-events: none;
+          transition: all .3s ease-out;
+      }
+      #check:checked~label #cancel{
+        left: 195px;
+        transition: all .5s ease;
+      }
+      #check:checked~ section{
+          margin-left: 250px;
+          transition: all 0.5s ease;
+      }
+      section{
+          background: url(https://images.pexels.com/photos/38537/woodland-road-falling-leaf-natural-38537.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940) no-repeat;
+          background-position: center;
+          background-size: cover;
+          height: 100vh;
+          transition: all .5s ease;
+      }
+    </style>
+
+</head>
+<body>
+    <input type="checkbox" id="check">
+    <label for="check">
+        <i class="fas fa-bars" id="btn"></i>
+        <i class="fas fa-times" id="cancel"></i>
+    </label>
+    <div class="sidebar">
+        <header><h1>My app</h1></header>
+        <ul>
+            <li><a href="#"><i class="fas fa-qrcode"></i>Dashboard</a></li>
+            <li><a href="#"><i class="fas fa-link"></i>Shortcuts</a></li>
+            <li><a href="#"><i class="fas fa-stream"></i>Overview</a></li>
+            <li><a href="#"><i class="fas fa-biohazard"></i>Dangerous</a></li>
+            <li><a href="#"><i class="far fa-question-circle"></i>About</a></li>
+            <li><a href="#"><i class="fas fa-sliders-h"></i>Services</a></li>
+            <li><a href="#"><i class="far fa-envelope"></i>Contacts</a></li>
+        </ul>
+    </div>
+    <section>
+
+    </section>
+    
+</body>
+</html>
